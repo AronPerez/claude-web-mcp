@@ -1,0 +1,53 @@
+{
+  "name": "claude-code-automation",
+  "author": "AronPerez",
+  "license": "MIT",
+  "version": "1.0.0",
+  "description": "Programmatic interface for Claude Code web automation",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node src/core/claude-code-automation.ts",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "format:check": "prettier --check \"src/**/*.ts\"",
+    "typecheck": "tsc --noEmit",
+    "example": "ts-node src/examples/claude-code-examples.ts",
+    "quick": "ts-node src/examples/quick-start.ts",
+    "mcp:start": "ts-node src/mcp/claude-code-mcp-server.ts",
+    "mcp:build": "tsc && node dist/mcp/claude-code-mcp-server.js",
+    "mcp:install": "npm run build && echo 'Add to Claude Desktop settings: src/mcp/mcp.json'",
+    "clean": "rm -rf dist coverage",
+    "prepare": "npm run build",
+    "validate": "npm run format:check && npm run lint && npm run typecheck"
+  },
+  "dependencies": {
+    "playwright": "^1.56.1",
+    "playwright-extra": "^4.3.6",
+    "playwright-extra-plugin-stealth": "^0.0.1",
+    "ws": "^8.18.3",
+    "p-queue": "^9.0.0",
+    "dotenv": "^16.3.1",
+    "node-fetch": "^3.3.2",
+    "events": "^3.3.0",
+    "@modelcontextprotocol/sdk": "^0.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "@types/ws": "^8.18.1",
+    "@types/jest": "^30.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.46.4",
+    "@typescript-eslint/parser": "^8.46.4",
+    "eslint": "^9.39.1",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.3",
+    "ts-node": "^10.9.2",
+    "ts-jest": "^29.4.5",
+    "jest": "^30.2.0"
+  }
+}

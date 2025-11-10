@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "claude-code": {
+      "command": "node",
+      "args": ["./dist/claude-code-mcp-server.js"],
+      "env": {
+        "MCP_HEADLESS": "true",
+        "MCP_DEBUG": "false",
+        "MCP_MAX_SESSIONS": "5",
+        "MCP_SESSION_PATH": "./sessions",
+        "TWOCAPTCHA_API_KEY": "${TWOCAPTCHA_API_KEY}"
+      }
+    }
+  }
+}
