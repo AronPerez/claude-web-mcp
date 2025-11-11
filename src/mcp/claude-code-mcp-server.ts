@@ -1037,7 +1037,7 @@ class ClaudeCodeMCPServer {
 }
 
 // Start server when run directly
-if (require.main === module) {
+if (import.meta.url === `file://${process.argv[1]}`) {
   const server = new ClaudeCodeMCPServer();
   server.start().catch(console.error);
 }
